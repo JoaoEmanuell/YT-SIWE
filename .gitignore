@@ -1,2 +1,4 @@
 *siwe/js/
 .vscode/
+node_modules/
+tmp.*
