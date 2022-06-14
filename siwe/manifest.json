@@ -1,0 +1,20 @@
+{
+    "manifest_version" : 2,
+    "name" : "YT-SIWE",
+    "version" : "0.1",
+    "description" : "Extension to open videos in short format like a video in normal format",
+    "author" : "João Emanuel",
+    "content_scripts" : [
+        {
+            "matches" : "https://www.youtube.com/shorts/*",
+
+            "css" : [
+                "css/style.css"
+            ], 
+
+            "js" : [
+                "js/app.js"
+            ]
+        }
+    ]
+}
