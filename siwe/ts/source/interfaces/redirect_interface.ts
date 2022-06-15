@@ -1,4 +1,4 @@
-interface RedirectInterface {
+export interface RedirectInterface {
     readonly url : string;
 
     validate_url() : boolean;
