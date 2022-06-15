@@ -6,7 +6,9 @@
     "author" : "João Emanuel",
     "content_scripts" : [
         {
-            "matches" : "https://www.youtube.com/shorts/*",
+            "matches" : [
+                "https://www.youtube.com/shorts/*"
+            ],
 
             "css" : [
                 "css/style.css"
