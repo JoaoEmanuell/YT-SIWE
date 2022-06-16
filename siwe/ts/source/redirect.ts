@@ -8,6 +8,9 @@ export class Redirect implements RedirectInterface {
     }
 
     run_redirect() : void {
-        window.location.href = this.url;
+        const url_treated = this.url.split("/")[4];
+        const url_base = 'https://www.youtube.com/watch';
+        const new_url = `${url_base}?v=${url_treated}`;
+        window.location.replace(new_url);
     }
 }
