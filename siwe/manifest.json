@@ -15,7 +15,7 @@
             ], 
 
             "js" : [
-                "js/app.js", "js/source/redirect.js"
+                "./js/app.js"
             ]
         }
     ]
