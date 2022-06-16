@@ -1,19 +1,14 @@
 class Main {
-    url = '';
-    constructor() {
-        this.url = window.location.href;
-    }
-
-    get_url() : string {
-        return this.url;
-    }
+    
 
     run() : void {
-        if (this.url.search('https://www.youtube.com/shorts') !== -1) {
-            const url_treated = this.url.split("/")[4];
+        const url = window.location.href;
+        const re = new RegExp('\/shorts\/');
+        if (re.test(url)) {
+            const url_treated = url.split("/")[4];
             const url_base = 'https://www.youtube.com/watch';
             const new_url = `${url_base}?v=${url_treated}`;
-            window.location.replace(new_url);
+            window.location.href = new_url;
         }
     }
 
