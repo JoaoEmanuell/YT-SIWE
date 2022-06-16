@@ -15,7 +15,7 @@
             ], 
 
             "js" : [
-                "./js/app.js"
+                "./src/app.js"
             ]
         }
     ]
