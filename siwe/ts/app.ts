@@ -1,6 +1,3 @@
-// import {Redirect} from "./source/redirect";
-// import {RedirectInterface} from "./source/interfaces/redirect_interface";
-
 class Main {
     url = '';
     constructor() {
@@ -12,15 +9,18 @@ class Main {
     }
 
     run() : void {
-        const url_treated = this.url.split("/")[4];
-        const url_base = 'https://www.youtube.com/watch';
-        const new_url = `${url_base}?v=${url_treated}`;
-        window.location.replace(new_url);
+        if (this.url.search('https://www.youtube.com/shorts') !== -1) {
+            const url_treated = this.url.split("/")[4];
+            const url_base = 'https://www.youtube.com/watch';
+            const new_url = `${url_base}?v=${url_treated}`;
+            window.location.replace(new_url);
+        }
     }
 
 }
 
 const main = new Main();
-const url = main.get_url()
 
-main.run();
+const interval = setInterval(() => {
+    main.run();
+}, 1000);
