@@ -7,7 +7,7 @@ class UnionFilesInterface(ABC):
 
         Args:
             files_paths (List[str]): List with paths to files
-            filename (str): Name of file to save
+            filename (str): Name of file to save (include path)
 
         """        
         raise NotImplementedError()
