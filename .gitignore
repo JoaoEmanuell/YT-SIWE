@@ -1,5 +1,19 @@
+# Extension
+
 *siwe/js/
 .vscode/
-node_modules/
 tmp.*
 siwe/src/
+
+# Javascript
+
+node_modules/
+
+# Python env
+
+bin/
+include/
+lib/
+lib64
+share/
+pyvenv.cfg
