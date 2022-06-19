@@ -4,7 +4,7 @@ from .interfaces import UnionFilesInterface
 
 class UnionFiles(UnionFilesInterface):
     def __init__(self, files_paths: List[str], filename: str) -> None:
-        self.__files_paths = files_paths
+        self.__files_paths = files_paths[::-1] # Reverse the list
         self.__filename = filename
 
     def union_files(self) -> None:
@@ -13,27 +13,39 @@ class UnionFiles(UnionFilesInterface):
 
         not_classes_functions : List[List[str]] = []
 
-        union_file : List[str] = [] # Context manager, to place merged file
-
         for file_path in self.__files_paths:
 
             with open(file_path, 'r') as file:
 
                 file = file.readlines()
 
-                if 'function' in file or 'class' in file or '=>' in file:
-                    classes_functions.append(
-                        self.private__remove_exports_imports(file))
+                for line in file :
+
+                    if 'function' in line or 'class' in line or '=>' in line:
+                        classes_functions.append(
+                            self.private__remove_exports_imports(file))
+                        break
+
+                # Else in for loop, case this for not break
+                
                 else : 
                     not_classes_functions.append(
                         self.private__remove_exports_imports(file))
 
-        union_file.append(*classes_functions)
-        union_file.append(*not_classes_functions)
+        if classes_functions == [] or not_classes_functions == []:
+            classes_functions.append('\n')
+            not_classes_functions.append('\n')
 
         with open(self.__filename, 'w') as file:
-            file.writelines(union_file)
-                
+
+            for line in classes_functions:
+
+                file.writelines(line)
+
+            for line in not_classes_functions:
+
+                file.writelines(line)
+
     def private__remove_exports_imports(self, file : List[str]) -> List[str]:
         new_file : List[str] = []
 
