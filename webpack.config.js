@@ -4,6 +4,6 @@ module.exports = {
     entry: './siwe/js/app.js',
     output: {
         filename: 'index.js',
-        path: resolve(__dirname, 'siwe', 'dist')
+        path: resolve(__dirname, 'siwe', "extension", 'dist')
     }
 };
