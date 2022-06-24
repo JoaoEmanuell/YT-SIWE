@@ -17,11 +17,11 @@ Dentro do *package.json* na área de scripts você pode verificar que existem do
 
 Você pode ler a descrição dos scripts ou clicar [aqui](#build) para aprender como fazer a build da extensão.
 
-### Start
+### Start - Script
 
 O Start convoca o compilador do typescript para compilar os arquivo para javascript.
 
-### Build
+### Build - Script
 
 O Build convoca o webpack para compactar os arquivos javascript gerados pelo typescript e salva-los como um único arquivo chamado de *index.js* dentro de *./siwe/extension/dist*.
 
