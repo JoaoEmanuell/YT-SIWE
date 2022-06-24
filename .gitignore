@@ -4,6 +4,7 @@
 .vscode/
 tmp.*
 siwe/src/
+dist/
 
 # Javascript
 
