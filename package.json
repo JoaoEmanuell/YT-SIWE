@@ -1,5 +1,11 @@
 {
+"scripts": {
+    "build": "webpack"
+  },
   "dependencies": {
     "typescript": "^4.7.3"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.10.0"
   }
 }
